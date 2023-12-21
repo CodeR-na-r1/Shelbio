@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct133i764t03"]
+
+[ext_resource type="Texture2D" uid="uid://280tv5qqr8k8" path="res://Collectibles/виски.png" id="1_6uqot"]
+[ext_resource type="Script" path="res://Collectibles/whiskey.gd" id="1_vqtqe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xd885"]
+size = Vector2(39.5, 69.25)
+
+[node name="Whiskey" type="Area2D"]
+script = ExtResource("1_vqtqe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-42, 31)
+scale = Vector2(0.289855, 0.269461)
+texture = ExtResource("1_6uqot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-44.75, 29.625)
+shape = SubResource("RectangleShape2D_xd885")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

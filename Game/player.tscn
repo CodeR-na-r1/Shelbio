@@ -1,0 +1,185 @@
+[gd_scene load_steps=27 format=3 uid="uid://cnck8yp03q6t3"]
+
+[ext_resource type="Script" path="res://Logic/player.gd" id="1_dwxvw"]
+[ext_resource type="Texture2D" uid="uid://cpqk7036mriul" path="res://assets/TommyShelby/Go/go1.svg" id="1_itsy5"]
+[ext_resource type="Texture2D" uid="uid://g7hb76moqcp5" path="res://assets/TommyShelby/Attack/attack1.svg" id="2_b3co5"]
+[ext_resource type="Texture2D" uid="uid://clx3co4ljlwaa" path="res://assets/TommyShelby/Go/go2.svg" id="2_ncsph"]
+[ext_resource type="Texture2D" uid="uid://fl7l6nxk6bll" path="res://assets/TommyShelby/Go/go3.svg" id="3_1avow"]
+[ext_resource type="Texture2D" uid="uid://cha6iwuxvmuea" path="res://assets/TommyShelby/Attack/attack2.svg" id="3_xeg1n"]
+[ext_resource type="Texture2D" uid="uid://chyvxvtkexxux" path="res://assets/TommyShelby/Go/go4.svg" id="4_fb2kc"]
+[ext_resource type="Texture2D" uid="uid://eyxvqajvyqjm" path="res://assets/TommyShelby/Attack/attack3.svg" id="4_v5utg"]
+[ext_resource type="Texture2D" uid="uid://dwyvdect27wmt" path="res://assets/TommyShelby/Go/go5.svg" id="5_wv6ul"]
+[ext_resource type="Texture2D" uid="uid://d1lq4ymronorp" path="res://assets/TommyShelby/Attack/attack4.svg" id="5_y5mia"]
+[ext_resource type="Texture2D" uid="uid://cpvf2k7jptfg5" path="res://assets/TommyShelby/Attack/attack5.svg" id="6_hl6g3"]
+[ext_resource type="Texture2D" uid="uid://bqlwy27t61dy8" path="res://assets/TommyShelby/Go/go6.svg" id="6_xj0q2"]
+[ext_resource type="Texture2D" uid="uid://ctg8qdhk10te6" path="res://assets/TommyShelby/Go/go7.svg" id="7_r5ahh"]
+[ext_resource type="Texture2D" uid="uid://dkdfh6vxcdf2m" path="res://assets/TommyShelby/Idle/idle1.svg" id="8_lrs43"]
+[ext_resource type="Texture2D" uid="uid://dig8epyrcanbl" path="res://assets/TommyShelby/Idle/idle2.svg" id="9_ky7dr"]
+[ext_resource type="Texture2D" uid="uid://5hb44aju1fp2" path="res://assets/TommyShelby/Idle/idle3.svg" id="10_05x0f"]
+[ext_resource type="Texture2D" uid="uid://44ustoi4hmks" path="res://assets/TommyShelby/Idle/idle4.svg" id="11_qgrgr"]
+[ext_resource type="Texture2D" uid="uid://76qt7vvohn73" path="res://assets/TommyShelby/Idle/idle5.svg" id="12_l3mhn"]
+[ext_resource type="Texture2D" uid="uid://c5wm30mebhbb1" path="res://assets/TommyShelby/Idle/idle6.svg" id="13_83c4b"]
+[ext_resource type="Texture2D" uid="uid://d0eqpbu12kfsw" path="res://assets/TommyShelby/Idle/idle7.svg" id="14_j703b"]
+[ext_resource type="Texture2D" uid="uid://o6m5hxftvy2g" path="res://assets/TommyShelby/Jump/jump2.svg" id="16_ufsqa"]
+[ext_resource type="Texture2D" uid="uid://co7vxqxa8sh5x" path="res://assets/foreground/circle.png" id="22_57kn4"]
+[ext_resource type="AudioStream" uid="uid://dasocp3wv2j6b" path="res://assets/sounds/SFX/damageTommy.wav" id="23_mpye1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8hmn7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b3co5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xeg1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v5utg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y5mia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hl6g3")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ufsqa")
+}],
+"loop": false,
+"name": &"Fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_itsy5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ncsph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1avow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fb2kc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wv6ul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xj0q2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_r5ahh")
+}],
+"loop": false,
+"name": &"Go",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_lrs43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lrs43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lrs43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lrs43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ky7dr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ky7dr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_05x0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_05x0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qgrgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qgrgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_l3mhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_l3mhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_83c4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_83c4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_j703b")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ufsqa")
+}],
+"loop": false,
+"name": &"Jump",
+"speed": 1.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jjpi2"]
+radius = 117.0
+height = 768.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wf4ny"]
+polygon = PackedVector2Array(-156, 356, 83, 356, 44, 413, -172, 413)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_dwxvw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = -0.00478142
+sprite_frames = SubResource("SpriteFrames_8hmn7")
+animation = &"Attack"
+autoplay = "Idle"
+frame_progress = 0.177321
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
+position = Vector2(0, -67.35)
+zoom = Vector2(1.275, 1.275)
+process_callback = 0
+limit_left = 0
+limit_bottom = 1100
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14, 21)
+shape = SubResource("CapsuleShape2D_jjpi2")
+
+[node name="PointLight2DForTommy" type="PointLight2D" parent="."]
+position = Vector2(604, 7)
+scale = Vector2(1.41939, 0.897867)
+energy = 1.2
+shadow_enabled = true
+texture = ExtResource("22_57kn4")
+texture_scale = 4.0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_wf4ny")
+
+[node name="damageSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_mpye1")
+volume_db = -10.0

@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://8l2vxdacxd1a"]
+
+[ext_resource type="Texture2D" uid="uid://bcwr6hwb15ny6" path="res://assets/foreground/destroyblock.png" id="1_8e1fc"]
+[ext_resource type="Script" path="res://Logic/destroyableBlock.gd" id="1_a8e17"]
+[ext_resource type="Texture2D" uid="uid://bhccetsylcfq7" path="res://assets/foreground/destroyblock1.png" id="2_v6bab"]
+[ext_resource type="Texture2D" uid="uid://7vc7lrexuolr" path="res://assets/foreground/destroyblock2.png" id="3_uyg43"]
+[ext_resource type="Texture2D" uid="uid://daol5uqdke8np" path="res://assets/foreground/destroyblock3.png" id="4_aqoha"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t166v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8e1fc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_v6bab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uyg43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_aqoha")
+}],
+"loop": false,
+"name": &"Destroy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8e1fc")
+}],
+"loop": true,
+"name": &"State",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypww7"]
+size = Vector2(409, 386)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klm80"]
+size = Vector2(409, 13)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_a8e17")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t166v")
+animation = &"Destroy"
+frame_progress = 0.455059
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10.5, 3)
+shape = SubResource("RectangleShape2D_ypww7")
+
+[node name="Detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+position = Vector2(-10.5, -185.5)
+shape = SubResource("RectangleShape2D_klm80")
+
+[connection signal="body_entered" from="Detector" to="." method="_on_detector_body_entered"]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv5teev5kq3uc"]
+
+[ext_resource type="Script" path="res://Logic/menu.gd" id="1_b4gdq"]
+[ext_resource type="PackedScene" uid="uid://cr8ymjlvc7vlm" path="res://Game/bg.tscn" id="2_rnrpn"]
+[ext_resource type="PackedScene" uid="uid://cp2n7rf5vg0yq" path="res://Game/UI/main_menu.tscn" id="3_pd3xy"]
+[ext_resource type="AudioStream" uid="uid://ypj03idxedum" path="res://assets/sounds/menuBacground.mp3" id="4_x28pm"]
+[ext_resource type="AudioStream" uid="uid://dvvmhnftihhce" path="res://assets/sounds/SFX/buttonClick.mp3" id="5_o1uug"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_b4gdq")
+
+[node name="BG" parent="." instance=ExtResource("2_rnrpn")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("3_pd3xy")]
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_x28pm")
+autoplay = true
+
+[node name="buttons" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_o1uug")
+
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+
+[editable path="CanvasLayer/Control"]

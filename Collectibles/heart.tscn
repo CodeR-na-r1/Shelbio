@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://p5smpjhc4olk"]
+
+[ext_resource type="Texture2D" uid="uid://0n24o3dd03tc" path="res://assets/foreground/heart.png" id="1_arqxp"]
+[ext_resource type="Script" path="res://Collectibles/heart.gd" id="1_qo88f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0n8lt"]
+size = Vector2(143, 142)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_qo88f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_arqxp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.5, 1)
+shape = SubResource("RectangleShape2D_0n8lt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
